@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --bg-heading: #8E9AAF;
+    --bg-main: #EFF1FF;
+    --bg-card: #FEEAFA;
+    --bg-head-line: #CBC0D3;
+
+    --ff-titles: 'Staatliches', cursive;
+    --ff-main: 'Palanquin', sans-serif; 
+
+    --fs-heading: clamp(2.5rem, 1rem + 10vw, 4rem);
+    --fs-main: clamp(0.8rem, 1rem + 1vw, 2rem);
+    --fs-card: clamp(1.2rem, 1rem + 2.5vw, 2rem);
+
+    --fc-heading: #FFF;
+    --fc-main: #23053A;
+    --fc-card: #4A4E69;
+}
+
+header {
+    height: 28rem;
+
+    background-color: var(--bg-heading);
+
+    text-align: center;
+}
+
+header img {
+    width: clamp(35.7%, 13rem + 10vw, 40%);
+    height: 13.7rem; 
+    margin: 3.2rem 0 3.2rem 0;
+}
+
+.background {
+    height: 4.9rem;
+    margin-bottom: 2.9rem;
+    
+    display: grid;
+    align-items: center;
+    
+    background-color: var(--bg-head-line);
+}
+
+header h1 {
+    font-family: var(--ff-titles);
+    font-size: var(--fs-heading);
+    font-weight: normal;
+    line-height: 3.4rem;
+    letter-spacing: 0.05em;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    color: var(--fc-heading);
+}
+
+main {
+    max-width: 83.4%;
+    margin: 1.4rem auto 0;
+    
+    display: grid;
+    justify-items: center;
+    gap: 3.2rem;
+}
+
+main p {
+    max-width: 95.9%;
+    margin-bottom: 3.1em;
+
+    font-family: var(--ff-main);
+    font-size: var(--fs-main);
+    line-height: 1.5rem;
+    text-align: center;
+    color: var(--fc-main);
+}
+
+.card {
+    position: relative;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+
+    animation-name: frombottom;
+    animation-duration: 600ms;
+    animation-delay: 200ms;
+    animation-fill-mode: backwards;
+}
+
+.card h2 {
+    padding: 6px 2.4rem;
+
+    position: absolute;
+    top: 1.6rem;
+    right: 1.6rem;
+
+    background-color: var(--bg-card);
+    border-radius: 2rem;
+
+    font-family: var(--ff-titles);
+    font-size: var(--fs-card);
+    font-weight: normal;
+    letter-spacing: 0.05em;
+    color: var(--fc-card);
+
+    animation-name: fromtop;
+    animation-duration: 600ms;
+    animation-delay: 400ms;
+    animation-fill-mode: backwards;
+}
+
+main div:nth-child(5) {
+    margin-bottom: 5rem;
+}
+
+@keyframes fromtop {
+    
+    0% {
+        opacity: 0;
+        transform: translateY(-1.5rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes frombottom {
+    
+    0% {
+        opacity: 0;
+        transform: translateY(+1.5rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
